@@ -1,5 +1,14 @@
 ---
+import type { ImageMetadata } from "astro";
+import { Image } from "astro:assets";
 
+const images = import.meta.glob<{ default: ImageMetadata }>(
+  "../images/overview/*.{jpeg,jpg,png}"
+);
 ---
 
-<p>Image Gallery here with 2 rows on mobile, 3 rows on Laptop</p>
+<body>
+  <div class="columns-2 sm:columns-3 gap-3 sm:gap-6 space-y-3 sm:space-y-6">
+    {Object.keys(images).map((key) => <Image src={images[key]()} alt={key} />)}
+  </div>
+</body>
