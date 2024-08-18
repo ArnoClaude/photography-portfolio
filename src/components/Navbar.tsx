@@ -10,8 +10,8 @@ export default function Navbar() {
     <Disclosure as="nav" className="sticky">
       {/* Desktop menu */}
       <div className="hidden sm:flex justify-between">
-        <p className="font-serif">Arno Claude</p>
-        <div className="sm:flex space-x-8 justify-en">
+        <p className="font-serif sm:text-xl">Arno Claude</p>
+        <div className="sm:flex space-x-8 sm:text-xl">
           <a href="/">Overview</a>
           <a href="/projects">Projects</a>
           <a href="/about">About</a>
